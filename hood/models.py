@@ -10,6 +10,8 @@ class Neighborhood(models.Model):
 
   def __str__(self):
     self.name
+  def save_hood(self):
+    self.save()
 
 class NeighborProfile(models.Model):
   name=models.CharField(max_length=60)
@@ -18,3 +20,17 @@ class NeighborProfile(models.Model):
 
   def __str__(self):
     self.name
+  def save_neighbour(self):
+    self.save()
+
+class Business(models.Model):
+  name=models.CharField(max_length=50)
+  user=models.ForeignKey(User,on_delete=models.CASCADE)
+  neighborhood=models.ForeignKey(Neighborhood,on_delete=models.CASCADE)
+  description=HTMLField()
+  business_mail=models.CharField(max_length=100)
+
+  def __str__(self):
+    self.name
+  def save_business(self):
+    self.save()
