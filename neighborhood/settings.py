@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framwork',
+    'rest_framework',
     'bootstrap4',
     'hood.apps.HoodConfig',
     'django.contrib.admin',
@@ -122,8 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIR= [
-  os.path.join(BASE_DIR,"static")  
+STATICFILES_DIRS =[
+    os.path.join(BASE_DIR,"static")
 ]
 
 MEDIA_URL = '/media/'

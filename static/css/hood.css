@@ -6,3 +6,11 @@ body{
 .navbar{
   font-family: 'Sawarabi Gothic', sans-serif;
 }
+#in,#out,#signup,#home{
+  text-decoration: none;
+  color: #2f4f4f; 
+}
+#in:hover,#out:hover,#signup:hover,#home:hover{
+  text-decoration: underline;
+  color: #008000; 
+}
