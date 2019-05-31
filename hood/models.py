@@ -10,3 +10,11 @@ class Neighborhood(models.Model):
 
   def __str__(self):
     self.name
+
+class NeighborProfile(models.Model):
+  name=models.CharField(max_length=60)
+  neighborhood=models.ForeignKey(Neighborhood,on_delete=models.CASCADE)
+  email=models.CharField(max_length=100)
+
+  def __str__(self):
+    self.name
