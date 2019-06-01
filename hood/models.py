@@ -50,5 +50,5 @@ class Business(models.Model):
 
   @classmethod
   def search_business(cls,search_name):
-    results = cls.objects.filter(business__name__icontains=search_name)
+    results = cls.objects.filter(name__icontains=search_name)
     return results

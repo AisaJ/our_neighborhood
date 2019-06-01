@@ -74,3 +74,16 @@ def new_business(request):
     form = NewBusinessForm()
     return render(request,'new_business.html',{"form":form})
 
+def search_business(request):
+  if 'name' in request.GET and request.GET['name']:
+    search_name = request.GET.get('name')
+    business_found = Business.search_business(search_name)
+    
+    message = f'{search_name}'
+
+    return render(request,'search.html',{"message":message, "businesses":business_found})
+
+  else:
+    message = "You haven't searched for any term."
+    return render(request,'search.html',{"message":message})
+
