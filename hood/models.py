@@ -12,6 +12,8 @@ class Neighborhood(models.Model):
     self.name
   def save_hood(self):
     self.save()
+  def delete_hood(self):
+    self.delete()
 
 class NeighborProfile(models.Model):
   name=models.CharField(max_length=60)
@@ -23,6 +25,8 @@ class NeighborProfile(models.Model):
     self.name
   def save_neighbour(self):
     self.save()
+  def delete_neighbour(self):
+    self.delete()
 
 class Business(models.Model):
   name=models.CharField(max_length=50)
@@ -35,3 +39,5 @@ class Business(models.Model):
     self.name
   def save_business(self):
     self.save()
+  def delete_business(self):
+    self.delete()
