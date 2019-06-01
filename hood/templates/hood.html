@@ -9,17 +9,34 @@
       <div class="col-md-10">
         {% for myhood in hood %}
         <h2>{{myhood.name}}</h2>
+        <hr>
         <div>
           <img src="{{myhood.hood_image.url}}" alt="Neighborhood" class="img-fluid">
         </div>        
         {% endfor %}
-        <div>
-          {%for business in found%}
+        <div class="business-desc">
+          {%for business in found%}          
           <div>
-            <h2>{{business.name}}</h2>
-            <p>Mail-contact: {{business.business_mail}}</p>
-            <p>Info: {{business.description}}</p>
-            <p><cite>Posted by: {{business.user.username}}</cite></p>
+            <table class="table table-striped w-auto">
+              <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Business</th>
+                    <th>Email Contact</th>
+                    <th>Description</th>
+                    <th>Neighbor posted</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-info">
+                    <th scope="row">1</th>
+                    <td>{{business.name}}</td>
+                    <td>{{business.business_mail}}</td>
+                    <td>{{business.description}}</td>
+                    <td><cite>{{business.user.username}}</cite></td>                    
+                  </tr>
+                </tbody>
+            </table>            
           </div>
           {% endfor %}
         </div>
