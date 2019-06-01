@@ -46,7 +46,7 @@
             <div class="mask rgba-black-light"></div>
           </div>
           <div class="carousel-caption">
-            <h3 class="h3-responsive">The good times can't be forgotten</h3>
+            <h3 class="h3-responsive">Cherished moments can't be forgotten</h3>
             <p>Always feels home</p>
           </div>
         </div>
@@ -78,19 +78,22 @@
   <!--/.Carousel Wrapper-->
     </div>
   </div>
+  <div class="text-center" id="find-your-hood">
+      <h2 class="text-center">Neighbor - Hoods</h2>
+      <a href="{%url 'newHood'%}"><button class="btn btn-outline-success">Add Neighborhood</button></a>
+    </div>
   <div class="container row">
     <div id="hoods">
-        <h2 class="text-center">Neighbor - Hoods</h2>
-        <a href="{%url 'newHood'%}"><button class="btn btn-outline-success">Add Neighborhood</button></a>
+             
         {% for hood in  hoods %}
         <div class="hood-section">
-          <div class="view overlay">
+          <div class="view overlay z-depth-5">
             <img src="{{hood.hood_image.url}}" alt="Hood" class="img-fluid">           
             <a href="/accounts/login/"><div class="mask flex-center rgba-green-light">
               <p class="white-text">Join Neighborhood</p>
-            </div></a> 
-            <p>{{hood.name}}</p>
-          </div>        
+            </div></a>             
+          </div>  
+          <p>{{hood.name}}</p>      
         </div>
         {% endfor %}
       </div>
