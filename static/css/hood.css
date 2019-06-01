@@ -6,6 +6,7 @@ body{
 .navbar{
   font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 1rem;
+  background-color: white;
 }
 #in,#out,#signup,#home,#hoods-link{
   text-decoration: none;
@@ -16,11 +17,12 @@ body{
   color: #008000; 
 }
 .auth,.new-add{
-  margin-top: 3%;  
+  margin-top: 3%;   
+}
+.formbg{
   background-image: url('../images/neighborhood.png');
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
 }
 .auth-form{
@@ -38,6 +40,12 @@ body{
 .overlay{
   margin-bottom: 4%;
 }
-#find-your-hood{
+#find-your-hood,.animated{
   margin-top: 3%;
+}
+.text-highlight{
+  color: #008000;
+}
+.wow {
+  visibility: hidden;
 }

@@ -48,7 +48,7 @@ def new_neighbour(request):
     form = NewProfileForm(request.POST,request.FILES)
     if form.is_valid():
       profile = form.save(commit=False)
-      profile.user =  current_user
+      profile.user = current_user
       prof_pic=form.cleaned_data['prof_pic']
       name=form.cleaned_data['name']
       email= form.cleaned_data['email']
