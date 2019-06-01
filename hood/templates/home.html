@@ -88,12 +88,13 @@
         {% for hood in  hoods %}
         <div class="hood-section">
           <div class="view overlay z-depth-5">
-            <img src="{{hood.hood_image.url}}" alt="Hood" class="img-fluid wow rotateInUpRight">           
+            <img src="{{hood.hood_image.url}}" alt="Hood" class="img-fluid wow zoomInUp">           
             <a href="{% url 'userProfile'%}"><div class="mask flex-center rgba-green-light">
               <p class="white-text">Join Neighborhood</p>
             </div></a>             
           </div>  
-          <p>{{hood.name}}</p>      
+          <p>{{hood.name}}</p>  
+          
         </div>
         {% endfor %}
       </div>

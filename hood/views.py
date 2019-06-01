@@ -51,7 +51,7 @@ def new_neighbour(request):
       profile.user = current_user
       prof_pic=form.cleaned_data['prof_pic']
       name=form.cleaned_data['name']
-      neighborhood_id=form.cleaned_data[neighborhood_id]
+      neighborhood_id=form.cleaned_data['neighborhood_id']
       email= form.cleaned_data['email']
       NeighborProfile.objects.filter(user=current_user).update(prof_pic=prof_pic,name=name,email=email,neighborhood_id=neighborhood_id)
       NeighborProfile.save()       
