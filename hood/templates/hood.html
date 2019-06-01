@@ -11,9 +11,18 @@
         <h2>{{myhood.name}}</h2>
         <div>
           <img src="{{myhood.hood_image.url}}" alt="Neighborhood" class="img-fluid">
-        </div>
-        
+        </div>        
         {% endfor %}
+        <div>
+          {%for business in found%}
+          <div>
+            <h2>{{business.name}}</h2>
+            <p>Mail-contact: {{business.business_mail}}</p>
+            <p>Info: {{business.description}}</p>
+            <p><cite>Posted by: {{business.user.username}}</cite></p>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       <div class="col-md-1"></div>
       

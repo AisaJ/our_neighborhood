@@ -12,9 +12,20 @@ def home(request):
 
 @login_required(login_url='/accounts/login')
 def hoods(request,id):
-  hood = Neighborhood.objects.filter(id=neighborhood.id)
+  businesses=Business.objects.all()
+  try:
+    hood = Neighborhood.objects.filter(id=neighborhood.id)
+    found = Business.objects.filter(neighborhood_id=neighborhood.id)
+  except DoesNotExist:
+    raise Http404() 
 
-  return render(request,'hood.html',{"hood":hood})
+  return render(request,'hood.html',locals())
+
+def user_profile(request):
+  current_user = request.user
+  profiles= NeighborProfile.objects.filter(user=current_user)[0:1]
+
+  return render(request,'profile.html',{"profiles":profiles})
 
 @login_required(login_url='/accounts/login')
 def new_hood(request):
@@ -43,7 +54,7 @@ def new_neighbour(request):
       email= form.cleaned_data['email']
       NeighborProfile.objects.filter(user=current_user).update(prof_pic=prof_pic,name=name,email=email)
       NeighborProfile.save()       
-    return redirect('newNeighbour')
+    return redirect('userProfile')
 
   else:
     form=NewProfileForm()

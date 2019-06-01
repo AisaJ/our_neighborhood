@@ -10,11 +10,11 @@ body{
   font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 1rem;
 }
-#in,#out,#signup,#home{
+#in,#out,#signup,#home,#hoods-link{
   text-decoration: none;
   color: #2f4f4f; 
 }
-#in:hover,#out:hover,#signup:hover,#home:hover{
+#in:hover,#out:hover,#signup:hover,#home:hover,#hoods-link:hover{
   text-decoration: underline;
   color: #008000; 
 }
