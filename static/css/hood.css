@@ -49,3 +49,8 @@ body{
 .wow {
   visibility: hidden;
 }
+#hoods{
+  display: flex;
+  flex-direction: row;
+  margin-right: 3%;
+}

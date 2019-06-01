@@ -9,7 +9,7 @@ class Neighborhood(models.Model):
   members=models.IntegerField()
 
   def __str__(self):
-    self.name
+    return self.name
   def save_hood(self):
     self.save()
   def delete_hood(self):
@@ -28,7 +28,7 @@ class NeighborProfile(models.Model):
   prof_pic=models.ImageField(upload_to='profiles/',default='avatar.png')
 
   def __str__(self):
-    self.name
+    return self.name
   def save_neighbour(self):
     self.save()
   def delete_neighbour(self):
@@ -42,7 +42,7 @@ class Business(models.Model):
   business_mail=models.CharField(max_length=100)
 
   def __str__(self):
-    self.name
+    return self.name
   def save_business(self):
     self.save()
   def delete_business(self):

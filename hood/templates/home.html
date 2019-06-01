@@ -94,7 +94,7 @@
             </div></a>             
           </div>  
           <p>{{hood.name}}</p>  
-          
+          <a href="{%url 'hood-details' neighborhood_id=hood.id%}"><button class="btn btn-default">View Businesses</button></a>    
         </div>
         {% endfor %}
       </div>

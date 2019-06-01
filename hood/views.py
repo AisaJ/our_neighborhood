@@ -11,15 +11,15 @@ def home(request):
   return render(request,'home.html',{"title":title,"hoods":hoods})
 
 @login_required(login_url='/accounts/login')
-def hoods(request,id):
+def hoods(request,neighborhood_id):
   businesses=Business.objects.all()
   try:
-    hood = Neighborhood.objects.filter(id=neighborhood.id)
-    found = Business.objects.filter(neighborhood_id=neighborhood.id)
+    hood = Neighborhood.objects.filter(id=neighborhood_id)
+    found = Business.objects.filter(id=neighborhood_id)
   except DoesNotExist:
     raise Http404() 
 
-  return render(request,'hood.html',locals())
+  return render(request,'hood.html',{"hood":hood,"found":found})
 
 def user_profile(request):
   current_user = request.user
@@ -66,10 +66,10 @@ def new_business(request):
   if request.method == 'POST':
     form = NewBusinessForm(request.POST,request.FILES)
     if form.is_valid():
-      business = form.save(commt=False)
+      business = form.save(commit=False)
       business.user = current_user
       business.save()
-    return redirect ('hood-details')
+    return redirect ('home')
   else:
     form = NewBusinessForm()
     return render(request,'new_business.html',{"form":form})
