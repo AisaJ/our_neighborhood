@@ -84,6 +84,6 @@ def search_business(request):
     return render(request,'search.html',{"message":message, "businesses":business_found})
 
   else:
-    message = "You haven't searched for any term."
+    message = "Try retyping the name again."
     return render(request,'search.html',{"message":message})
 
