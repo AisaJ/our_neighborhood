@@ -29,3 +29,23 @@ def new_hood(request):
   else:
     form=NewHoodForm()
     return render(request,'new_hood.html',{"form":form})
+
+@login_required(login_url='/accounts/login')
+def new_neighbour(request):
+  current_user =  request.user 
+  if request.method == 'POST':
+    form = NewProfileForm(request.POST,request.FILES)
+    if form.is_valid():
+      profile = form.save(commit=False)
+      profile.user =  current_user
+      prof_pic=form.cleaned_data['prof_pic']
+      name=form.cleaned_data['name']
+      email= form.cleaned_data['email']
+      NeighborProfile.objects.filter(user=current_user).update(prof_pic=prof_pic,name=name,email=email)
+      NeighborProfile.save()
+       
+    return redirect('newNeighbour')
+  else:
+    form=NewProfileForm()
+    return render(request,'new_neighbor.html',{"form":form})
+

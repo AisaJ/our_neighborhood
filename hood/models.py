@@ -17,6 +17,7 @@ class NeighborProfile(models.Model):
   name=models.CharField(max_length=60)
   neighborhood=models.ForeignKey(Neighborhood,on_delete=models.CASCADE)
   email=models.CharField(max_length=100)
+  prof_pic=models.ImageField(upload_to='profiles/',default='avatar.png')
 
   def __str__(self):
     self.name

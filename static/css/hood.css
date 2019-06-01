@@ -18,7 +18,7 @@ body{
   text-decoration: underline;
   color: #008000; 
 }
-.auth{
+.auth,.new-add{
   margin-top: 3%;  
 }
 .auth-form{

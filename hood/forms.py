@@ -8,9 +8,8 @@ class NewHoodForm(forms.ModelForm):
 class NewProfileForm(forms.ModelForm):
   class Meta:
     model=NeighborProfile
-    exclude=['neighborhood']
-
+    
 class NewBusinessForm(forms.ModelForm):
   class Meta:
     model=Business
-    exclude=['user','neighborhood']
+    exclude=['user']
