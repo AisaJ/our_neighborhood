@@ -78,13 +78,17 @@
   <!--/.Carousel Wrapper-->
     </div>
   </div>
-  <div class="row">
+  <div class="container row">
     <div id="hoods">
         <h2 class="text-center">Neighbor - Hoods</h2>
+        <a href="{%url 'newHood'%}"><button class="btn btn-outline-success">Add Neighborhood</button></a>
         {% for hood in  hoods %}
-        <div class="w3-half w3-container">
-          <div class="w3-topbar w3-border-green">
-            <img src="{{hood.hood_image.url}}" alt="Hood" clas>
+        <div class="hood-section">
+          <div class="view overlay">
+            <img src="{{hood.hood_image.url}}" alt="Hood" class="img-fluid">           
+            <a href="/accounts/login/"><div class="mask flex-center rgba-green-light">
+              <p class="white-text">Join Neighborhood</p>
+            </div></a> 
             <p>{{hood.name}}</p>
           </div>        
         </div>
