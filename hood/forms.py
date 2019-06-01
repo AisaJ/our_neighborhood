@@ -9,7 +9,7 @@ class NewHoodForm(forms.ModelForm):
 class NewProfileForm(forms.ModelForm):
   class Meta:
     model=NeighborProfile
-    exclude=['user']
+    exclude=['user','neighborhood']
   
 class NewBusinessForm(forms.ModelForm):
   class Meta:
