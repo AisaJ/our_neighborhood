@@ -40,7 +40,7 @@ body{
 .overlay{
   margin-bottom: 4%;
 }
-#find-your-hood,.animated{
+#find-your-hood,.animated,.business-section{
   margin-top: 3%;
 }
 .text-highlight{
@@ -51,6 +51,9 @@ body{
 }
 #hoods{
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   margin-right: 3%;
+}
+th,td{
+  font-size: 1.3rem !important;
 }

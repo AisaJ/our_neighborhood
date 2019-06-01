@@ -82,11 +82,11 @@
       <h2 class="text-center">Neighbor - Hoods</h2>
       <a href="{%url 'newHood'%}"><button class="btn btn-outline-success">Add Neighborhood</button></a>
     </div>
-  <div class="container row">
+  <div class="container-fluid row">
     <div id="hoods">
-             
+        
         {% for hood in  hoods %}
-        <div class="hood-section">
+        <div class="col-md-4 hood-section text-center">
           <div class="view overlay z-depth-5">
             <img src="{{hood.hood_image.url}}" alt="Hood" class="img-fluid wow zoomInUp">           
             <a href="{% url 'userProfile'%}"><div class="mask flex-center rgba-green-light">
@@ -97,6 +97,7 @@
           <a href="{%url 'hood-details' neighborhood_id=hood.id%}"><button class="btn btn-default">View Businesses</button></a>    
         </div>
         {% endfor %}
+        
       </div>
   </div>  
 </div>

@@ -16,7 +16,7 @@ class Neighborhood(models.Model):
     self.delete()
 
   @classmethod
-  def find_neigborhood(cls,neighborhood_id):
+  def view_neigborhood(cls,neighborhood_id):
     hood=cls.objects.filter(id=neighborhood_id)
     return hood
 
@@ -47,3 +47,8 @@ class Business(models.Model):
     self.save()
   def delete_business(self):
     self.delete()
+
+  @classmethod
+  def search_business(cls,search_name):
+    results = cls.objects.filter(business__name__icontains=search_name)
+    return results
