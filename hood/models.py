@@ -15,8 +15,14 @@ class Neighborhood(models.Model):
   def delete_hood(self):
     self.delete()
 
+  @classmethod
+  def find_neigborhood(cls,neighborhood_id):
+    hood=cls.objects.filter(id=neighborhood_id)
+    return hood
+
 class NeighborProfile(models.Model):
   name=models.CharField(max_length=60)
+  user=models.ForeignKey(User,on_delete=models.CASCADE)
   neighborhood=models.ForeignKey(Neighborhood,on_delete=models.CASCADE)
   email=models.CharField(max_length=100)
   prof_pic=models.ImageField(upload_to='profiles/',default='avatar.png')

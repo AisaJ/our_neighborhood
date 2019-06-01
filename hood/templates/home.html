@@ -77,14 +77,19 @@
   </div>
   <!--/.Carousel Wrapper-->
     </div>
-    <div id="hoods">
-      <h2 class="text-center">Neighbor - Hoods</h2>
-      <div>
-
-      </div>
-
-    </div>
-
   </div>
+  <div class="row">
+    <div id="hoods">
+        <h2 class="text-center">Neighbor - Hoods</h2>
+        {% for hood in  hoods %}
+        <div class="w3-half w3-container">
+          <div class="w3-topbar w3-border-green">
+            <img src="{{hood.hood_image.url}}" alt="Hood" clas>
+            <p>{{hood.name}}</p>
+          </div>        
+        </div>
+        {% endfor %}
+      </div>
+  </div>  
 </div>
 {% endblock %}
