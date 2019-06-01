@@ -4,11 +4,13 @@ from .models import Neighborhood,NeighborProfile,Business
 class NewHoodForm(forms.ModelForm):
   class Meta:
     model=Neighborhood
+    fields ='__all__'
 
 class NewProfileForm(forms.ModelForm):
   class Meta:
     model=NeighborProfile
-    
+    fields='__all__'
+  
 class NewBusinessForm(forms.ModelForm):
   class Meta:
     model=Business
