@@ -2,7 +2,7 @@
 #### An application that allows users living in the same neighborhood to stay upto date with the businesses in thier area. Keep in touch with the home area loop and community feel wherever.  June 3, 2019.
 #### By Aisa Jemila
 ## Description
-Deployed to: https://p-rates.herokuapp.com/
+Deployed to: https://our-hood.herokuapp.com
 This is a web platform for users in the same neighborhood stay in touch of the neighborhood activities and on going businesses. Users create an account to join a neighborhood community and can share of any business and it's more detailed information needed to be known to other neighbours of the same neighborhood. Users can search for businesses and view their areas found. 
 ## App
 ![Landing Page](/static/images/Landingpage.png)
