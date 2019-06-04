@@ -12,10 +12,10 @@ def home(request):
 
 @login_required(login_url='/accounts/login')
 def hoods(request,neighborhood_id):
-  businesses=Business.objects.all()
+ 
   try:
     hood = Neighborhood.objects.filter(id=neighborhood_id)
-    found = Business.objects.filter(id=neighborhood_id)
+    found = Business.objects.filter(neighborhood=neighborhood_id)[0:1]
   except DoesNotExist:
     raise Http404() 
 
@@ -77,7 +77,7 @@ def new_business(request):
 def search_business(request):
   if 'name' in request.GET and request.GET['name']:
     search_name = request.GET.get('name')
-    business_found = Business.search_business(search_name)
+    business_found = Business.search_business(search_name)[0:1]
     
     message = f'{search_name}'
 
